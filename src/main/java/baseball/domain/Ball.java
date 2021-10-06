@@ -4,19 +4,19 @@ import baseball.enums.Score;
 
 public class Ball {
     int position;
-    int number;
+    BallNumber number;
 
     public Ball(int position, int number) {
         this.position = position;
-        this.number = number;
+        this.number = new BallNumber(number);
     }
 
     public Score check(Ball target) {
-        if(this.equals(target)) {
+        if (this.equals(target)) {
             return Score.STRIKE;
         }
 
-        if(target.number == number) {
+        if (target.number == number) {
             return Score.BALL;
         }
 
@@ -25,11 +25,11 @@ public class Ball {
 
     @Override
     public boolean equals(Object o) {
-        if(this == o) {
+        if (this == o) {
             return true;
         }
 
-        if(o == null || !(o instanceof Ball)) {
+        if (o == null || !(o instanceof Ball)) {
             return false;
         }
 
