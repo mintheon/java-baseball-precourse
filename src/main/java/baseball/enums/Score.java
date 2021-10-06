@@ -1,4 +1,4 @@
-package domain.enums;
+package baseball.enums;
 
 public enum Score {
     STRIKE("스트라이크"),
