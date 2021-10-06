@@ -3,8 +3,8 @@ package baseball.domain;
 import baseball.enums.Score;
 
 public class Ball {
-    int position;
-    BallNumber number;
+    private final int position;
+    private final BallNumber number;
 
     public Ball(int position, int number) {
         this.position = position;
@@ -16,7 +16,7 @@ public class Ball {
             return Score.STRIKE;
         }
 
-        if (target.number == number) {
+        if (target.number.getValue() == number.getValue()) {
             return Score.BALL;
         }
 
@@ -35,6 +35,6 @@ public class Ball {
 
         Ball target = (Ball) o;
 
-        return position == target.position && number == target.number;
+        return position == target.position && number.getValue() == target.number.getValue();
     }
 }

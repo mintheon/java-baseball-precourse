@@ -15,10 +15,22 @@ public class Balls {
 
     private List<Ball> makeBalls(List<Integer> numbers) {
         AtomicInteger index = new AtomicInteger(1);
-
         return numbers.stream()
                 .map(number -> new Ball(index.getAndIncrement(), number))
                 .collect(Collectors.toList());
+    }
+
+    public Result check(List<Integer> numbers) {
+        Balls inputBalls = new Balls(numbers);
+        Result result = new Result();
+
+        for (Ball ball : balls) {
+            Score score = inputBalls.check(ball);
+
+            result.report(score);
+        }
+
+        return result;
     }
 
     public Score check(Ball target) {

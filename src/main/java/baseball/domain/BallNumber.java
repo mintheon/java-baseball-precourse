@@ -15,4 +15,8 @@ public class BallNumber {
 
         this.number = number;
     }
+
+    public int getValue() {
+        return number;
+    }
 }
