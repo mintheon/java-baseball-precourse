@@ -5,7 +5,7 @@ public enum Score {
     BALL("볼"),
     NOTHING("낫싱");
 
-    private String name;
+    private final String name;
 
     Score(String name) {
         this.name = name;
@@ -13,5 +13,9 @@ public enum Score {
 
     public String getName() {
         return name;
+    }
+
+    public boolean isNotNothing() {
+        return this != NOTHING;
     }
 }
